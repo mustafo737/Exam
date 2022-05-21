@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 //salom asadbek
-
+//salom bro
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
