@@ -10,6 +10,8 @@ import javax.validation.Valid;
 
 //salom asadbek
 //salom bro
+
+//nma gap?
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
