@@ -11,7 +11,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.*;
 
-@ControllerAdvice
 public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Override

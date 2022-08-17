@@ -1,17 +1,9 @@
 package com.example.exam.service;
 
-import com.example.exam.dto.PatientDto;
 import com.example.exam.model.Patient;
 import com.example.exam.repository.PatientRepository;
-import com.example.exam.exception.BadRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PatientService {
@@ -19,62 +11,24 @@ public class PatientService {
     private PatientRepository patientRepository;
 
 
-    public PatientDto get(Integer id) {
-        Patient patient = getEntity(id);
-        PatientDto patientDto = new PatientDto();
-        convertEntityToDto(patient, patientDto);
-        return patientDto;
+    public Patient get(Integer id) {
+        return null;
     }
 
-    public PatientDto create(PatientDto patientDto) {
-        Patient patient = new Patient();
-        convertDtoToEntity(patientDto,patient);
-        patient.setStatus(true);
-        patient.setCreatedAt(LocalDateTime.now());
-        patientRepository.save(patient);
-        patientDto.setId(patient.getId());
-        return patientDto;
+    public Patient create(Patient patientDto) {
+        return null;
     }
 
-    public boolean update(Integer id, PatientDto patientDto) {
-        Patient update = getEntity(id);
-        convertDtoToEntity(patientDto, update);
-        patientRepository.save(update);
-        return true;
+    public boolean update(Integer id, Patient patientDto) {
+        return false;
     }
 
     public boolean delete(Integer id){
-        Patient patient = getEntity(id);
-        patientRepository.delete(patient);
-        return true;
+        return false;
     }
 
     public Patient getEntity(Integer id){
-        Optional<Patient> optional = patientRepository.findById(id);
-        if (optional.isEmpty()) {
-            throw new BadRequest("Patient not found");
-        }
-        return optional.get();
-    }
-
-    public void convertDtoToEntity(PatientDto dto, Patient entity){
-        entity.setName(dto.getName());
-        entity.setSurname(dto.getSurname());
-        entity.setBirthday(dto.getBirthday());
-        entity.setAge(LocalDate.now().getYear() - dto.getBirthday().getYear());
-        entity.setContact(dto.getContact());
-    }
-
-    public void convertEntityToDto(Patient entity, PatientDto dto){
-        dto.setId(entity.getId());
-        dto.setName(entity.getName());
-        dto.setSurname(entity.getSurname());
-        dto.setAge(entity.getAge());
-        dto.setBirthday(entity.getBirthday());
-        dto.setContact(entity.getContact());
-    }
-
-    public List<PatientDto> findAllByPage(Integer page, Integer size) {
         return null;
     }
+
 }

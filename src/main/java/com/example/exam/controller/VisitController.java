@@ -1,6 +1,6 @@
 package com.example.exam.controller;
 
-import com.example.exam.dto.VisitDto;
+import com.example.exam.model.Visit;
 import com.example.exam.service.VisitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,25 +16,21 @@ public class VisitController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id){
-        VisitDto result = visitService.get(id);
-        return ResponseEntity.ok(result);
+        return null;
     }
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid VisitDto visit){
-        VisitDto result = visitService.create(visit);
-        return ResponseEntity.ok(result);
+    public ResponseEntity<?> create(@RequestBody @Valid Visit visit){
+        return null;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid VisitDto visit){
-        boolean result = visitService.update(id, visit);
-        return ResponseEntity.ok(result);
+    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid Visit visit){
+       return null;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Integer id){
-        boolean result = visitService.delete(id);
-        return ResponseEntity.ok(result);
+       return null;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.exam.controller;
 
-import com.example.exam.dto.DoctorDto;
+import com.example.exam.model.Doctor;
 import com.example.exam.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,8 +10,6 @@ import javax.validation.Valid;
 
 //salom asadbek
 //salom bro
-
-//nma gap?
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
@@ -20,25 +18,21 @@ public class DoctorController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable("id") Integer id) {
-        DoctorDto result = doctorService.get(id);
-        return ResponseEntity.ok(result);
+      return null;
     }
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody @Valid DoctorDto doctor){
-        DoctorDto result = doctorService.create(doctor);
-        return ResponseEntity.ok(result);
+    public ResponseEntity<?> create(@RequestBody @Valid Doctor doctor){
+        return null;
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid DoctorDto doctor){
-        boolean result = doctorService.update(id,doctor);
-        return ResponseEntity.ok(result);
+    public ResponseEntity<?> update(@PathVariable("id") Integer id, @RequestBody @Valid Doctor doctor){
+       return null;
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") Integer id){
-        boolean result = doctorService.delete(id);
-        return ResponseEntity.ok(result);
+        return null;
     }
 
 }
